@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-200 antialiased;
+  }
+}
+
+@layer components {
+  .code-block {
+    @apply font-mono text-sm bg-gray-900/80 border border-gray-800 rounded-lg p-4 overflow-x-auto;
+  }
+  
+  .gradient-border {
+    @apply relative rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 p-[1px];
+  }
+  
+  .gradient-border-inner {
+    @apply bg-gray-950 rounded-xl p-6 h-full;
+  }
+}
