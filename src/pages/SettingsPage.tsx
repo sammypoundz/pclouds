@@ -1,5 +1,5 @@
 // src/pages/SettingsPage.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useToast, CurrencyToggle } from '../shared';
 import type { DisplayCurrency } from '../shared';
 

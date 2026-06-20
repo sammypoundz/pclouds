@@ -4,8 +4,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { 
-  FiCloud, FiTerminal, FiArrowRight, FiGithub, FiTwitter, 
-  FiLinkedin, FiMail, FiCheckCircle, FiZap, 
+  FiCloud, FiTerminal, FiArrowRight, FiGithub, FiCheckCircle, FiZap, 
   FiChevronUp, FiChevronLeft, FiChevronRight, FiBox, 
   FiActivity, FiCreditCard, FiCommand, FiSettings, FiUser, FiChevronDown,
   FiLogIn, FiUserPlus, FiLock, FiLoader as FiLoaderIcon,

@@ -2,10 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FiHome, FiBox, FiGlobe, FiServer, FiShield, FiMail, FiKey, FiCreditCard,
-  FiMenu, FiX, FiPlus, FiSettings, FiUser, FiChevronDown,
-  FiCheckCircle, FiZap, FiActivity, FiTerminal, FiDollarSign,
-  FiCommand, FiLayers, FiRefreshCw, FiLogOut, FiEdit2, FiTrash2,
+  FiHome, FiBox, FiGlobe, FiServer, FiShield, FiMail,FiCreditCard,
+  FiMenu, FiX, FiPlus, FiSettings, FiUser, FiChevronDown, FiZap, FiActivity, FiTerminal, FiRefreshCw, FiLogOut, FiEdit2, FiTrash2,
   FiAlertTriangle,
 } from "react-icons/fi";
 import { useAuth, useToast, apiRequest } from "./shared";
