@@ -69,7 +69,7 @@ const loadPaystackScript = (): Promise<void> => new Promise((resolve) => {
   script.onload = () => resolve();
   document.body.appendChild(script);
 });
-const PAYSTACK_PUBLIC_KEY = 'pk_test_...'; // Replace with your key
+const PAYSTACK_PUBLIC_KEY = 'pk_test_a2f79913f3b3607234f0aad0b6a1a69407021899'; // Replace with your key
 export interface PaystackOptions {
   email: string;
   amount: number;
@@ -444,7 +444,8 @@ export const Navbar = () => {
           {isHome ? <button onClick={() => scrollToSection('cli')} className="hover:text-white transition cursor-pointer">CLI</button> : <Link to="/#cli" className="hover:text-white transition">CLI</Link>}
           {isHome ? <button onClick={() => scrollToSection('pricing')} className="hover:text-white transition cursor-pointer">Pricing</button> : <Link to="/#pricing" className="hover:text-white transition">Pricing</Link>}
           <a href="#" className="hover:text-white transition">Docs</a>
-          <Link to="/dashboard" className="hover:text-white transition">Dashboard</Link>
+          {/* Only show Dashboard link if authenticated */}
+          {isAuthenticated && <Link to="/dashboard" className="hover:text-white transition">Dashboard</Link>}
         </div>
         <div className="flex items-center gap-3">
           {isAuthenticated ? (
@@ -477,10 +478,42 @@ export const Footer = () => (
   <footer className="bg-gray-950 border-t border-gray-800 pt-16 pb-8 px-6">
     <div className="max-w-7xl mx-auto">
       <div className="grid md:grid-cols-5 gap-8 mb-12">
-        <div className="col-span-2"><div className="flex items-center gap-2 mb-4"><div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"><FiCloud className="text-white" /></div><span className="font-bold text-xl">PCLOUDs</span></div><p className="text-gray-500 text-sm max-w-xs">Building Africa's default infrastructure platform for developers and startups.</p><div className="flex gap-4 mt-4"><FiGithub className="text-gray-500 hover:text-white cursor-pointer transition" /><FiTwitter className="text-gray-500 hover:text-white cursor-pointer transition" /><FiLinkedin className="text-gray-500 hover:text-white cursor-pointer transition" /><FiMail className="text-gray-500 hover:text-white cursor-pointer transition" /></div></div>
-        <div><h4 className="font-semibold mb-3">Product</h4><ul className="space-y-2 text-sm text-gray-500"><li><Link to="/domains" className="hover:text-gray-300">Domains</Link></li><li><Link to="/hosting" className="hover:text-gray-300">Hosting</Link></li><li><Link to="/api-marketplace" className="hover:text-gray-300">API Marketplace</Link></li><li><Link to="/library" className="hover:text-gray-300">Library</Link></li><li><a href="#" className="hover:text-gray-300">CLI</a></li></ul></div>
-        <div><h4 className="font-semibold mb-3">Developers</h4><ul className="space-y-2 text-sm text-gray-500"><li><a href="#" className="hover:text-gray-300">Documentation</a></li><li><a href="#" className="hover:text-gray-300">API Reference</a></li><li><a href="#" className="hover:text-gray-300">Status</a></li><li><a href="#" className="hover:text-gray-300">GitHub</a></li></ul></div>
-        <div><h4 className="font-semibold mb-3">Company</h4><ul className="space-y-2 text-sm text-gray-500"><li><a href="#" className="hover:text-gray-300">About</a></li><li><a href="#" className="hover:text-gray-300">Blog</a></li><li><a href="#" className="hover:text-gray-300">Careers</a></li><li><a href="#" className="hover:text-gray-300">Contact</a></li></ul></div>
+        <div className="col-span-2">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"><FiCloud className="text-white" /></div>
+            <span className="font-bold text-xl">PCLOUDs</span>
+          </div>
+          <p className="text-gray-500 text-sm max-w-xs">Building Africa's default infrastructure platform for developers and startups.</p>
+          {/* Social icons removed */}
+        </div>
+        <div>
+          <h4 className="font-semibold mb-3">Product</h4>
+          <ul className="space-y-2 text-sm text-gray-500">
+            <li><Link to="/domains" className="hover:text-gray-300">Domains</Link></li>
+            <li><Link to="/hosting" className="hover:text-gray-300">Hosting</Link></li>
+            <li><Link to="/api-marketplace" className="hover:text-gray-300">API Marketplace</Link></li>
+            <li><Link to="/library" className="hover:text-gray-300">Library</Link></li>
+            <li><a href="#" className="hover:text-gray-300">CLI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-3">Developers</h4>
+          <ul className="space-y-2 text-sm text-gray-500">
+            <li><a href="#" className="hover:text-gray-300">Documentation</a></li>
+            <li><a href="#" className="hover:text-gray-300">API Reference</a></li>
+            <li><a href="#" className="hover:text-gray-300">Status</a></li>
+            <li><a href="#" className="hover:text-gray-300">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-3">Company</h4>
+          <ul className="space-y-2 text-sm text-gray-500">
+            <li><a href="#" className="hover:text-gray-300">About</a></li>
+            <li><a href="#" className="hover:text-gray-300">Blog</a></li>
+            <li><a href="#" className="hover:text-gray-300">Careers</a></li>
+            <li><a href="#" className="hover:text-gray-300">Contact</a></li>
+          </ul>
+        </div>
       </div>
       <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-600">&copy; 2025 PCLOUDs — Empowering African developers. All rights reserved.</div>
     </div>
